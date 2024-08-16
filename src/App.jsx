@@ -66,15 +66,15 @@ function App() {
   return (
     <>
       <div className="App">
-        <div style={{ position: "relative", height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <MainContainer style={{ height: "100%", width: "100%", maxWidth: "700px", maxHeight: "800px", display: "flex", flexDirection: "column" }}>
-            <ChatContainer>
-              <MessageList typingIndicator={typing ? <TypingIndicator content="Response is getting ready" /> : null}>
+        <div style={{ position: "relative", height: "100%", width: "100%" }}>
+          <MainContainer className="MainContainer">
+            <ChatContainer className="ChatContainer">
+              <MessageList className="MessageList" typingIndicator={typing ? <TypingIndicator content="Response is getting ready" /> : null}>
                 {messages.map((message, i) => (
                   <Message key={i} model={message} />
                 ))}
               </MessageList>
-              <MessageInput placeholder="Type Message Here" onSend={handleSend} />
+              <MessageInput className="MessageInput" placeholder="Type Message Here" onSend={handleSend} />
             </ChatContainer>
           </MainContainer>
         </div>
