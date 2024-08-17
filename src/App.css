@@ -127,21 +127,33 @@
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
   .App {
-    padding: 0; /* Remove padding */
-    overflow: auto; /* Allow scrolling */
+    display: flex;
+    flex-direction: column; /* Ensure vertical alignment */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling */
   }
 
   .MainContainer {
     width: 100%; /* Full width on mobile */
     max-width: 100%; /* Ensure it doesn’t exceed screen width */
+    height: 100%; /* Full height on mobile */
+    max-height: 100%; /* Ensure it doesn’t exceed screen height */
     padding: 0 10px; /* Small padding on mobile screens */
     box-sizing: border-box; /* Include padding in width calculations */
   }
 
   .ChatContainer {
     width: 100%;
-    height: 50vh; /* Reduce height by half on mobile */
-    padding: 0; /* Remove padding */
+    height: calc(100% - 60px); /* Adjust height to leave space for the input */
+    overflow: hidden; /* Prevent scrolling inside chat container */
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .MessageList {
+    overflow-y: hidden; /* Prevent scrolling inside message list */
+    padding: 10px;
+    height: 100%; /* Full height of the container */
   }
 
   .MessageInput {
@@ -153,5 +165,6 @@
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     margin: 0 10px; /* Margin for centering */
     box-sizing: border-box;
+    z-index: 10; /* Ensure input is above other elements */
   }
 }
