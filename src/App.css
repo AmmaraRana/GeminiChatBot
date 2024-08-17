@@ -61,6 +61,7 @@
   height: 100vh; /* Full viewport height */
   padding: 0; /* Remove padding to use full screen space */
   box-sizing: border-box; /* Include padding/borders in dimensions */
+  overflow: auto; /* Allow scrolling */
 }
 
 /* Main Container */
@@ -88,6 +89,7 @@
   margin: 0 auto; /* Center horizontally */
   padding: 0;
   box-sizing: border-box;
+  overflow: auto; /* Allow scrolling */
 }
 
 /* Message List */
@@ -108,6 +110,7 @@
 @media only screen and (min-width: 769px) {
   .App {
     padding: 0; /* Remove padding for desktop */
+    overflow: auto; /* Ensure scrolling */
   }
 
   .MainContainer {
@@ -125,6 +128,7 @@
 @media only screen and (max-width: 768px) {
   .App {
     padding: 0; /* Remove padding */
+    overflow: auto; /* Allow scrolling */
   }
 
   .MainContainer {
@@ -136,7 +140,7 @@
 
   .ChatContainer {
     width: 100%;
-    height: 100%;
+    height: 50vh; /* Reduce height by half on mobile */
     padding: 0; /* Remove padding */
   }
 
@@ -151,4 +155,3 @@
     box-sizing: border-box;
   }
 }
-
