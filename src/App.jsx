@@ -63,23 +63,21 @@ function App() {
     }
   }
 
-  return (
-    <>
-      <div className="App">
-        <div style={{ position: "relative", height: "100%", width: "100%" }}>
-          <MainContainer className="MainContainer">
-            <ChatContainer className="ChatContainer">
-              <MessageList className="MessageList" typingIndicator={typing ? <TypingIndicator content="Response is getting ready" /> : null}>
-                {messages.map((message, i) => (
-                  <Message key={i} model={message} />
-                ))}
-              </MessageList>
-              <MessageInput className="MessageInput" placeholder="Type Message Here" onSend={handleSend} />
-            </ChatContainer>
-          </MainContainer>
-        </div>
+ return (
+    <div className="App">
+      <div style={{ position: "relative", height: "100%", width: "100%" }}>
+        <MainContainer className="MainContainer">
+          <ChatContainer className="ChatContainer">
+            <MessageList className="MessageList" typingIndicator={typing ? <TypingIndicator content="Response is getting ready" /> : null}>
+              {messages.map((message, i) => (
+                <Message key={i} model={message} />
+              ))}
+            </MessageList>
+            <MessageInput className="MessageInput" placeholder="Type Message Here" onSend={handleSend} />
+          </ChatContainer>
+        </MainContainer>
       </div>
-    </>
+    </div>
   );
 }
 
