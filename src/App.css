@@ -110,8 +110,8 @@
 
   .MessageInput {
     height: 60px; /* Adjust height as needed */
-    position: fixed; /* Keep it at the bottom */
-    bottom: 0;
+    position: absolute; /* Keep it at the bottom */
+
     width: 100%; /* Full width */
     left: 0; /* Align with the container */
   }
