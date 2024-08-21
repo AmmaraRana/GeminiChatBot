@@ -1,55 +1,13 @@
 /* Root container covering the full screen */
 #root {
   width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  height: 80vh; /* Full viewport height */
   margin: 0;
-  overflow: hidden; /* Prevent overflow */
+
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   text-align: center;
-}
-
-/* Logo styles */
-.logo {
-  height: 10vh; /* Height as a percentage of viewport height */
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-/* Card styling */
-.card {
-  padding: 2em;
-  max-width: 100%; /* Ensure it doesn’t exceed screen width */
-  box-sizing: border-box; /* Include padding in width calculations */
-}
-
-/* Read the docs link color */
-.read-the-docs {
-  color: #888;
 }
 
 /* Chat App Styles */
@@ -57,7 +15,7 @@
   display: flex;
   flex-direction: column;
   width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  height: 90vh; /* Full viewport height */
   padding: 0; /* Remove padding to use full screen space */
   box-sizing: border-box; /* Include padding/borders in dimensions */
 }
@@ -67,7 +25,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 90%;
   max-width: 700px; /* Max width for larger screens */
   margin: 0 auto; /* Center horizontally */
   padding: 0; /* Remove padding to fit the screen */
@@ -82,7 +40,7 @@
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  
   padding: 10px;
   box-sizing: border-box;
 }
@@ -100,20 +58,29 @@
   background-color: #f0f0f0;
   border-top: 1px solid #ddd;
   box-sizing: border-box;
+  position: relative; /* Ensure correct positioning */
+  width: 100%;
 }
 
 /* Mobile Specific Styles */
 @media (max-width: 768px) {
   .ChatContainer {
-    height: calc(100vh - 60px); /* Ensure enough space for the input area */
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Full viewport height */
+  }
+
+  .MessageList {
+    flex: 1;
+    overflow-y: auto; /* Enable scrolling */
   }
 
   .MessageInput {
-    height: 60px; /* Adjust height as needed */
-    position: absolute; /* Keep it at the bottom */
-
+    height: 60px; /* Fixed height for input area */
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 0;
+    left: 0;
     width: 100%; /* Full width */
-    left: 0; /* Align with the container */
   }
 }
 
